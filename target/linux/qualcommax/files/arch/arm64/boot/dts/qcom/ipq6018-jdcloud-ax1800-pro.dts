@@ -17,10 +17,10 @@
 	aliases {
 		sdhc1 = &sdhc_1;
 		serial0 = &blsp1_uart3;
-		led-boot = &status_red;
+		led-boot = &status_green;
 		led-failsafe = &status_red;
-		led-running = &status_green;
-		led-upgrade = &status_green;
+		led-running = &status_blue;
+		led-upgrade = &status_red;
 		ethernet1 = &dp2;
 		ethernet2 = &dp3;
 		ethernet3 = &dp4;
@@ -61,17 +61,17 @@
 
 		status_blue: status_blue {
 			label = "blue:status";
-			gpios = <&tlmm 34 GPIO_ACTIVE_HIGH>;
+			gpios = <&tlmm 35 GPIO_ACTIVE_HIGH>;
 		};
 
 		status_red: status_red {
 			label = "red:status";
-			gpios = <&tlmm 36 GPIO_ACTIVE_HIGH>;
+			gpios = <&tlmm 37 GPIO_ACTIVE_HIGH>;
 		};
 
 		status_green: status_green {
 			label = "green:status";
-			gpios = <&tlmm 49 GPIO_ACTIVE_HIGH>;
+			gpios = <&tlmm 50 GPIO_ACTIVE_HIGH>;
 		};
 	};
 };
@@ -204,7 +204,7 @@
 
 	pinctrl-0 = <&mdio_pinmux>;
 	pinctrl-names = "default";
-	reset-gpios = <&tlmm 74 GPIO_ACTIVE_LOW>;
+	reset-gpios = <&tlmm 75 GPIO_ACTIVE_LOW>;
 
 	ethernet_0: ethernet-phy-package@0 {
 		compatible = "qcom,qca8075-package";
