@@ -13,7 +13,7 @@ Signed-off-by: P Praneesh <quic_ppranees@quicinc.com>
 
 --- a/include/net/mac80211.h
 +++ b/include/net/mac80211.h
-@@ -1538,39 +1538,38 @@
+@@ -1538,39 +1538,38 @@ ieee80211_tx_info_clear_status(struct ie
   *	hardware or driver)
   */
  enum mac80211_rx_flags {
