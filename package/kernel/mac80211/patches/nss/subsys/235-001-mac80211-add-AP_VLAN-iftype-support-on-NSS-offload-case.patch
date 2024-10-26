@@ -12,7 +12,7 @@ Signed-off-by: Sathishkumar Muruganandam <murugana@codeaurora.org>
 ---
  include/net/mac80211.h    | 11 +++++++++++
  net/mac80211/cfg.c        |  5 ++++-
- net/mac80211/driver-ops.c | 10 ++++++----
+ net/mac80211/driver-ops.c |  9 +++++----
  net/mac80211/iface.c      | 10 ++++++----
  net/mac80211/rx.c         |  6 ++++++
  net/mac80211/tx.c         | 14 ++++++++++----
@@ -180,7 +180,7 @@ Signed-off-by: Sathishkumar Muruganandam <murugana@codeaurora.org>
  			continue;
 -		if (sdata->vif.type != NL80211_IFTYPE_AP_VLAN &&
 +		if ((sdata->vif.type != NL80211_IFTYPE_AP_VLAN ||
-+            ieee80211_hw_check(&local->hw, SUPPORTS_NSS_OFFLOAD)) &&
++		    ieee80211_hw_check(&local->hw, SUPPORTS_NSS_OFFLOAD)) &&
  		    ieee80211_sdata_running(sdata)) {
  			res = drv_add_interface(local, sdata);
  			if (WARN_ON(res))
@@ -190,7 +190,7 @@ Signed-off-by: Sathishkumar Muruganandam <murugana@codeaurora.org>
  				continue;
 -			if (sdata->vif.type != NL80211_IFTYPE_AP_VLAN &&
 +			if ((sdata->vif.type != NL80211_IFTYPE_AP_VLAN ||
-+                ieee80211_hw_check(&local->hw, SUPPORTS_NSS_OFFLOAD)) &&
++			    ieee80211_hw_check(&local->hw, SUPPORTS_NSS_OFFLOAD)) &&
  			    ieee80211_sdata_running(sdata))
  				drv_remove_interface(local, sdata);
  		}
