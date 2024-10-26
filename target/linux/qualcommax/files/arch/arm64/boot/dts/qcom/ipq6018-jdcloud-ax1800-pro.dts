@@ -18,7 +18,7 @@
 		serial0 = &blsp1_uart3;
 		led-boot = &status_green;
 		led-failsafe = &status_red;
-		led-running = &status_blue;
+		led-running = &status_green;
 		led-upgrade = &status_red;
 		ethernet1 = &dp2;
 		ethernet2 = &dp3;
